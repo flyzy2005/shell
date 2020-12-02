@@ -4,7 +4,12 @@
 
 # install besttrace
 if [ ! -f "besttrace" ]; then
-    wget https://github.com/zq/shell/raw/master/besttrace
+	arch=$(uname -m)
+    if [ "${arch}" == "i686" ]; then
+    	wget -O besttrace https://github.com/flyzy2005/shell/raw/master/besttrace32
+    else
+    	wget https://github.com/flyzy2005/shell/raw/master/besttrace
+    fi
     # unzip besttrace4linux.zip
     chmod +x besttrace
 fi
